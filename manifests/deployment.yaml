@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: BlazorIntApp1
+  name: blazorintapp1
   labels:
-    app: BlazorIntApp1
+    app: blazorintapp1
     kubernetes.azure.com/generator: devhub
   namespace: blazorintapp1
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: BlazorIntApp1
+      app: blazorintapp1
   template:
     metadata:
       labels:
-        app: BlazorIntApp1
+        app: blazorintapp1
     spec:
       containers:
-        - name: BlazorIntApp1
+        - name: blazorintapp1
           image: arteiroacr.azurecr.io/blazorintapp1:latest
           imagePullPolicy: Always
           ports:
