@@ -1,3 +1,4 @@
+using BlazorIntApp1;
 using BlazorIntApp1.Components;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,6 +6,14 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+builder.Services.AddSingleton<ChatService>(cp =>
+{
+    var ApiUrl = builder.Configuration["AzureOpenaiUrl"];
+    var ApiKey = builder.Configuration["AzureOpenaiKey"];
+    
+    return new ChatService(ApiUrl,ApiKey);
+});
 
 var app = builder.Build();
 

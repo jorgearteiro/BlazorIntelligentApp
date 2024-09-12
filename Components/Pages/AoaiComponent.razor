@@ -1,0 +1,36 @@
+﻿@page "/aichat"
+@rendermode InteractiveServer
+
+@inject ChatService chatService
+
+<PageTitle>Chat - Azure Open AI</PageTitle>
+
+<h1>AI Chat</h1>
+
+    <div> 
+        <div>
+        <InputText @bind-Value="@requestMessage" style="width:450px"></InputText>
+        <button class="btn btn-primary" @onclick="CallAI"> Ask </button>
+        </div>
+    </div>
+    <p></p>
+    <div>
+      <InputTextArea @bind-Value="@responseMessage" style="width:650px;height:450px"></InputTextArea>
+    </div>
+
+
+@code {
+    private string requestMessage = "";
+    private string responseMessage = "";
+
+    public async Task CallAI()
+    {
+        try
+        {
+            responseMessage = chatService.GetResponse(requestMessage);
+        }
+        catch (Exception)
+        {
+        }
+    }
+}

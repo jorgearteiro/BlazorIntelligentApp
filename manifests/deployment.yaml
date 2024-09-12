@@ -20,5 +20,10 @@ spec:
         - name: blazorintapp1
           image: arteiroacr.azurecr.io/blazorintapp1:latest
           imagePullPolicy: Always
+          envFrom:
+          - secretRef:
+            value: "azure-openai-url"
+          - secretRef:
+            value: "azure-openai-key"
           ports:
             - containerPort: 8080
