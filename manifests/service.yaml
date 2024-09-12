@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: BlazorIntApp1
+  name: blazorintapp1
   namespace: blazorintapp1
   labels:
     kubernetes.azure.com/generator: devhub
 spec:
   type: LoadBalancer
   selector:
-    app: BlazorIntApp1
+    app: blazorintapp1
   ports:
     - protocol: TCP
       port: 80
