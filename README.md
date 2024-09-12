@@ -1,4 +1,4 @@
-# BlazorIntApp1
+# Blazor Intelligent Application
 
 Demo Azure Open AI app using .NET Blazor Server template.
 
