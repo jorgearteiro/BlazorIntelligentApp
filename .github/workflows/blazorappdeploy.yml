@@ -40,7 +40,7 @@ on:
 env:
   ACR_RESOURCE_GROUP: rg-user1
   AZURE_CONTAINER_REGISTRY: acruser19yhg
-  CONTAINER_NAME: blazorapp
+  CONTAINER_NAME: blazorintapp1
   CLUSTER_RESOURCE_GROUP: rg-user1
   CLUSTER_NAME: aks-user1
   DEPLOYMENT_MANIFEST_PATH: |
